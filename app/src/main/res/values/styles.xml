@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="textfieldTextInputLayout">
+        <item name="hintTextColor">@color/colorPrimaryDark</item>
+        <item name="hintTextAppearance">@android:style/TextAppearance.DeviceDefault.Small</item>
+    </style>
+
+    <style name="materialCardView">
+        <item name="cardCornerRadius">@dimen/radius_corner_card</item>
+        <item name="strokeColor">#000</item>
+        <item name="strokeWidth">@dimen/width_stroke_common</item>
+        <item name="contentPadding">@dimen/indent</item>
+        <item name="cardUseCompatPadding">true</item>
+    </style>
+
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="instruments">
+        <item>EURUSD</item>
+        <item>GBPUSD</item>
+        <item>USDJPY</item>
+        <item>USDCHF</item>
+        <item>USDCAD</item>
+        <item>AUDUSD</item>
+        <item>NZDUSD</item>
+    </string-array>
+</resources>

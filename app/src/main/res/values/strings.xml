@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Test-task-insta-perm</string>
+    <string name="hint_login">PARTNERS_LOGIN</string>
+    <string name="hint_password">PARTNERS_PASSWORD</string>
+    <string name="authorization">Authorization:</string>
+    <string name="button_log_in">Log In</string>
+</resources>

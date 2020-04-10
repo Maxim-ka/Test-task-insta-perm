@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="radius_corner_card">4dp</dimen>
+
+    <dimen name="width_stroke_common">2dp</dimen>
+
+    <dimen name="text_size_pair">24sp</dimen>
+    <dimen name="text_size_field_dialog">20sp</dimen>
+    <dimen name="text_size_dialog">28sp</dimen>
+    <dimen name="text_size_info">18sp</dimen>
+
+    <dimen name="indent_big">16dp</dimen>
+    <dimen name="indent">8dp</dimen>
+    <dimen name="indent_little">2dp</dimen>
+
+    <dimen name="elevation_card">8dp</dimen>
+
+</resources>

@@ -11,6 +11,8 @@
     <style name="textfieldTextInputLayout">
         <item name="hintTextColor">@color/colorPrimaryDark</item>
         <item name="hintTextAppearance">@android:style/TextAppearance.DeviceDefault.Small</item>
+        <item name="errorTextColor">@color/colorAccent</item>
+        <item name="errorTextAppearance">@style/TextAppearance.MaterialComponents.Body1</item>
     </style>
 
     <style name="materialCardView">

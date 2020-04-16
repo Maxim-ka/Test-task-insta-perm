@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/toolSelectionFragment">
+
+    <fragment
+        android:id="@+id/toolSelectionFragment"
+        android:name="com.reschikov.testtaskinstaperm.ui.parameters.ToolSelectionFragment"
+        android:label="ToolSelectionFragment"
+        tools:layout="@layout/fragment_parameter_selection">
+        <action
+            android:id="@+id/action_toolSelectionFragment_to_listSignalsFragment"
+            app:destination="@id/listSignalsFragment" />
+        <action
+            android:id="@+id/action_toolSelectionFragment_to_dateSettingDialog"
+            app:destination="@id/dateSettingDialog" />
+        <action
+            android:id="@+id/action_toolSelectionFragment_to_authorizationFragment"
+            app:destination="@id/authorizationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listSignalsFragment"
+        android:name="com.reschikov.testtaskinstaperm.ui.showdata.ListSignalsFragment"
+        android:label="ListSignalsFragment"
+        tools:layout="@layout/fragment_list_signals">
+        <action
+            app:destination="@id/toolSelectionFragment"
+            app:popUpTo="@id/toolSelectionFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="com.reschikov.testtaskinstaperm.ui.authorization.AuthorizationFragment"
+        android:label="AuthorizationFragment"
+        tools:layout="@layout/fragment_authorization">
+        <action
+            app:destination="@id/toolSelectionFragment"
+            app:popUpTo="@id/toolSelectionFragment"/>
+    </fragment>
+    <dialog
+        android:id="@+id/dateSettingDialog"
+        android:name="com.reschikov.testtaskinstaperm.ui.dialogs.DateSettingDialog"
+        android:label="DateSettingDialog">
+        <action
+            app:destination="@id/toolSelectionFragment"
+            app:popUpTo="@id/toolSelectionFragment"/>
+    </dialog>
+</navigation>

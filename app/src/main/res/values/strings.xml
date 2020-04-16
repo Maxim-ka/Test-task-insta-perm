@@ -4,4 +4,26 @@
     <string name="hint_password">PARTNERS_PASSWORD</string>
     <string name="authorization">Authorization:</string>
     <string name="button_log_in">Log In</string>
+    <string name="but_ok">OK</string>
+    <string name="dialog_no_network">No NetWork! \nCheck your internet connection!</string>
+    <string name="dialog_no_authorization">No Authorization! \nCheck the username and/or password \n</string>
+    <string name="dialog_title_warning">Warning!</string>
+    <string name="title_from_date">From date</string>
+    <string name="title_to_date">Up to date</string>
+    <string name="from_day">from the day</string>
+    <string name="to_day">to day</string>
+    <string name="eurusd">EURUSD</string>
+    <string name="gbpusd">GBPUSD</string>
+    <string name="usdjpy">USDJPY</string>
+    <string name="usdchf">USDCHF</string>
+    <string name="usdcad">USDCAD</string>
+    <string name="audusd">AUDUSD</string>
+    <string name="nzdusd">NZDUSD</string>
+    <string name="but_to_get_data">to get data</string>
+    <string name="attention">Attention!</string>
+    <string name="err_correct_choice">check the choice of instrument</string>
+    <string name="err_start_date_can_NOT">the start date can NOT be greater than the end date</string>
+    <string name="err_end_date_can_NOT">the end date can NOT be less than the start</string>
+    <string name="err_field_not_filled">The field is not filled</string>
+    <string name="err_no_data_on_request">There is no data on request for the specified period</string>
 </resources>

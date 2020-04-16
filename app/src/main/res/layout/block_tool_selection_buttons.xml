@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/indent_small"
+    android:layout_gravity="center_horizontal"
+    android:columnCount="3">
+
+    <ToggleButton
+        android:id="@+id/but_EURUSD"
+        android:layout_margin="@dimen/indent_small"
+        android:textSize="@dimen/text_size_info"
+        android:textColor="#FFF"
+        android:background="@drawable/tool_button_state"
+        android:textOff="@string/eurusd"
+        android:textOn="@string/eurusd"/>
+
+    <ToggleButton
+        android:id="@+id/but_GBPUSD"
+        android:layout_margin="@dimen/indent_small"
+        android:textSize="@dimen/text_size_info"
+        android:textColor="#FFF"
+        android:background="@drawable/tool_button_state"
+        android:textOff="@string/gbpusd"
+        android:textOn="@string/gbpusd"/>
+
+    <ToggleButton
+        android:id="@+id/but_USDJPY"
+        android:layout_margin="@dimen/indent_small"
+        android:textSize="@dimen/text_size_info"
+        android:textColor="#FFF"
+        android:background="@drawable/tool_button_state"
+        android:textOff="@string/usdjpy"
+        android:textOn="@string/usdjpy"/>
+
+    <ToggleButton
+        android:id="@+id/but_USDCHF"
+        android:layout_margin="@dimen/indent_small"
+        android:textSize="@dimen/text_size_info"
+        android:textColor="#FFF"
+        android:background="@drawable/tool_button_state"
+        android:textOff="@string/usdchf"
+        android:textOn="@string/usdchf"/>
+
+    <ToggleButton
+        android:id="@+id/but_USDCAD"
+        android:layout_margin="@dimen/indent_small"
+        android:textSize="@dimen/text_size_info"
+        android:textColor="#FFF"
+        android:background="@drawable/tool_button_state"
+        android:textOff="@string/usdcad"
+        android:textOn="@string/usdcad"/>
+
+    <ToggleButton
+        android:id="@+id/but_AUDUSD"
+        android:layout_margin="@dimen/indent_small"
+        android:textColor="#FFF"
+        android:background="@drawable/tool_button_state"
+        android:textSize="@dimen/text_size_info"
+        android:textOff="@string/audusd"
+        android:textOn="@string/audusd"/>
+
+    <ToggleButton
+        android:id="@+id/but_NZDUSD"
+        android:layout_margin="@dimen/indent_small"
+        android:textColor="#FFF"
+        android:background="@drawable/tool_button_state"
+        android:textSize="@dimen/text_size_info"
+        android:layout_column="1"
+        android:textOff="@string/nzdusd"
+        android:textOn="@string/nzdusd"/>
+
+</GridLayout>

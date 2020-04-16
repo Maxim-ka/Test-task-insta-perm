@@ -12,6 +12,7 @@
 
     <dimen name="indent_big">16dp</dimen>
     <dimen name="indent">8dp</dimen>
+    <dimen name="indent_small">4dp</dimen>
     <dimen name="indent_little">2dp</dimen>
 
     <dimen name="elevation_card">8dp</dimen>

@@ -1,7 +1,7 @@
 package com.reschikov.testtaskinstaperm.data.network
 
 import com.reschikov.testtaskinstaperm.model.Authorization
-import com.reschikov.testtaskinstaperm.model.Signal
+import com.reschikov.testtaskinstaperm.data.network.model.ServerResponse
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -16,5 +16,5 @@ interface ObtainedFromInstaforex {
                        @Query ("tradingsystem") tradingsystem : Int,
                        @Query ("pairs") pairs : String,
                        @Query ("from") from : Long,
-                       @Query ("to") to : Long) : Call<List<Signal>>
+                       @Query ("to") to : Long) : Call<List<ServerResponse>>
 }

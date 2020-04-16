@@ -1,70 +1,78 @@
 package com.reschikov.testtaskinstaperm.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.fragment.app.Fragment
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.reschikov.testtaskinstaperm.R
-import com.reschikov.testtaskinstaperm.ui.authorization.AuthorizationFragment
-import com.reschikov.testtaskinstaperm.ui.showdata.ListSignalsFragment
+import com.reschikov.testtaskinstaperm.ui.dialogs.showAlertDialog
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.consumeEach
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlin.coroutines.CoroutineContext
-
-private const val TAG_AUTHORIZATION = "tag Authorization"
-private const val TAG_LIST_SIGNALS = "tag ListSignals"
 
 class MainActivity : AppCompatActivity(), CoroutineScope {
 
     override val coroutineContext : CoroutineContext by lazy {
         Dispatchers.Main + SupervisorJob()
     }
+    private val navController: NavController by lazy { Navigation.findNavController(this, R.id.frame_master) }
+
+    private val observerIsAuthorized  by lazy {
+        Observer<Boolean> {
+            if (it) {
+                if (navController.currentDestination?.id == R.id.authorizationFragment){
+                    navController.popBackStack()
+                }
+            } else {
+                if (navController.currentDestination?.id == R.id.toolSelectionFragment){
+                    navController.navigate(R.id.action_toolSelectionFragment_to_authorizationFragment)
+                }
+            }
+        }
+    }
+
+    private val observerVisibilityProcess by lazy {
+        Observer<Boolean> {
+            pb_circle.visibility = if(it) View.VISIBLE else View.GONE
+        }
+    }
 
     private val viewModel : MainViewModel by viewModel()
     private lateinit var errorJob : Job
-    private lateinit var successJob : Job
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (savedInstanceState == null){
-            supportFragmentManager.beginTransaction()
-                .add(R.id.frame_master, AuthorizationFragment(), TAG_AUTHORIZATION)
-                .commit()
-        }
+        viewModel.isAuthorizedLiveData().observe(this, observerIsAuthorized)
+        viewModel.hasVisibleProgressLiveData().observe(this, observerVisibilityProcess)
     }
 
     @ExperimentalCoroutinesApi
     override fun onStart() {
         super.onStart()
         errorJob = launch{
-            viewModel.getErrorChannel().consumeEach { e ->
-                e?.let { renderError(it) }
-            }
+            renderError(viewModel.getErrorChannel().receive())
         }
-        successJob = launch {
-            if (viewModel.getSuccessChannel().receive()){
-                loadFragment(ListSignalsFragment(), TAG_LIST_SIGNALS)
-            }
-        }
-    }
-
-    private fun loadFragment(fragment: Fragment, tag : String){
-        supportFragmentManager.beginTransaction()
-            .add(R.id.frame_master, fragment, tag)
-            .addToBackStack(tag)
-            .commit()
     }
 
     private fun renderError(e : Throwable){
-        Toast.makeText(baseContext, e.message, Toast.LENGTH_LONG).show()
+        showAlertDialog(getString(R.string.dialog_title_warning), "" + e.message)
+        navController.popBackStack(R.id.toolSelectionFragment, false)
     }
 
     override fun onStop () {
         super .onStop()
-        successJob.cancel()
         errorJob.cancel()
+    }
+
+    override fun onBackPressed() {
+        if (navController.currentDestination?.id == R.id.authorizationFragment) {
+            finish()
+        }
+        super.onBackPressed()
     }
 
     override fun onDestroy() {

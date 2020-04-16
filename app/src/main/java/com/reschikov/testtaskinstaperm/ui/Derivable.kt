@@ -6,5 +6,5 @@ import com.reschikov.testtaskinstaperm.model.Signal
 interface Derivable {
 
     suspend fun hasAuthorization(authorization: Authorization) : Pair<Boolean, Throwable?>
-    suspend fun getListSignals(pairs: String, from: Long, to: Long) : Pair<List<Signal>?, Throwable?>
+    suspend fun getListSignals(pairs: Array<String>, from: Long, to: Long) : Pair<List<Signal>?, Throwable?>
 }

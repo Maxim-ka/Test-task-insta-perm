@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/indent"
+    android:baselineAligned="false">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_date_begin"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indent"
+        android:layout_marginEnd="@dimen/indent"
+        style="@style/textfieldTextInputLayout"
+        app:errorEnabled="true"
+        app:hintEnabled="true"
+        app:hintAnimationEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_date_begin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/from_day"
+            android:focusableInTouchMode="false"
+            android:textAlignment="center" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_date_end"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indent"
+        android:layout_marginEnd="@dimen/indent"
+        style="@style/textfieldTextInputLayout"
+        app:errorEnabled="true"
+        app:hintEnabled="true"
+        app:hintAnimationEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_date_end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/to_day"
+            android:focusableInTouchMode="false"
+            android:textAlignment="center" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

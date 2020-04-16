@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.reschikov.testtaskinstaperm.MILLI_SEC
 import com.reschikov.testtaskinstaperm.R
 import com.reschikov.testtaskinstaperm.model.Signal
 import kotlinx.android.extensions.LayoutContainer
@@ -40,7 +41,8 @@ class AdapterListSignals : RecyclerView.Adapter<AdapterListSignals.ViewHolder>()
             with(containerView){
                 signal.also {
                     tv_pair.text = it.pair
-                    tv_time.text = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM).format(Date(it.actualTime))
+                    tv_time.text = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM)
+                        .format(Date(it.actualTime * MILLI_SEC))
                     tv_price.text = it.price.toString()
                     tv_sl.text = it.sl.toString()
                     tv_tp.text = it.tp.toString()
